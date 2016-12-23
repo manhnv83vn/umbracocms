@@ -1,0 +1,36 @@
+﻿@inherits UmbracoViewPage<UmbracoCms.ViewModels.ContactFormViewModel>
+
+<h2 class="title">Contact Form<span class="line"></span></h2>
+
+@if (!string.IsNullOrEmpty(Model.ErrorMessage))
+{
+    <div class="alert alert-danger">@Model.ErrorMessage</div>
+}
+
+@using (Html.BeginUmbracoForm("PostContactForm", "ContactForm", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.Name)
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control", placeholder = "Name" })
+    </div>
+
+    <p>@Html.ValidationMessageFor(x => x.Name, null, null, "strong")</p>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.Email)
+        @Html.TextBoxFor(x => x.Email, new { @class = "form-control", placeholder = "Email", type = "email" })
+    </div>
+
+    <p>@Html.ValidationMessageFor(x => x.Email, null, null, "strong")</p>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.Message)
+        @Html.TextAreaFor(x => x.Message, new { @class = "form-control", rows = "5", placeholder = "Message" })
+    </div>
+
+    <p>@Html.ValidationMessageFor(x => x.Message, null, null, "strong")</p>
+
+    <button type="submit" class="btn btn-primary">Send Message</button>
+}

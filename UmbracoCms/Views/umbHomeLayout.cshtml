@@ -1,0 +1,110 @@
+﻿@inherits UmbracoTemplatePage
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@Umbraco.Field("title", altFieldAlias: "pageName") | @Umbraco.Field("siteName", recursive: true)</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/Content/bootstrap.min.css" />
+    <link href="/css/full-slider.css" rel="stylesheet">
+
+    <script src="/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+
+    <script src="/js/config.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/skel-panels.min.js"></script>
+
+    <noscript>
+        <link rel="stylesheet" href="/css/skel-noscript.css" />
+        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/css/style-desktop.css" />
+    </noscript>
+
+    <!--[if lte IE 9]><link rel="stylesheet" href="/css/ie9.css" /><![endif]-->
+    <!--[if lte IE 8]><script src="/js/html5shiv.js"></script><link rel="stylesheet" href="/css/ie8.css" /><![endif]-->
+    <!--[if lte IE 7]><link rel="stylesheet" href="/css/ie7.css" /><![endif]-->
+</head>
+<body class="homepage">
+    @{
+        Html.RenderPartial("umbTopNavigation");
+    }
+    <!-- Header -->
+    <!-- Full Page Image Background Carousel Header -->
+    <header id="myCarouselLayout" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarouselLayout" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarouselLayout" data-slide-to="1"></li>
+            <li data-target="#myCarouselLayout" data-slide-to="2"></li>
+        </ol>
+        <!-- Wrapper for Slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <!-- Set the first background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
+                <div class="carousel-caption">
+                    <h2>Caption 1</h2>
+                </div>
+            </div>
+            <div class="item">
+                <!-- Set the second background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
+                <div class="carousel-caption">
+                    <h2>Caption 2</h2>
+                </div>
+            </div>
+            <div class="item">
+                <!-- Set the third background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
+                <div class="carousel-caption">
+                    <h2>Caption 3</h2>
+                </div>
+            </div>
+        </div>
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarouselLayout" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarouselLayout" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+    </header>
+    <!-- /Header -->
+    <!-- Content -->
+    <div id="main-wrapper">
+        <div class="container">
+            @{
+                Html.RenderPartial("umbBreadcrumb");
+            }
+        </div>
+        @RenderBody()
+    </div>
+    <!-- /Content -->
+    <!-- Footer -->
+    <footer id="footer" class="container">
+        <div class="row">
+            <!-- Copyright -->
+            <div id="copyright">
+                &copy; @DateTime.Now.Year @Umbraco.Field("copyright", recursive: true)
+            </div>
+            <!-- /Copyright -->
+        </div>
+    </footer>
+    <!-- /Footer -->
+    <!-- Script to Activate the Carousel -->
+    <script>
+        $('#myCarouselLayout').carousel({
+            interval: 5000 //changes the speed
+        })
+    </script>
+</body>
+</html>

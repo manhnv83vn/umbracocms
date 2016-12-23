@@ -1,0 +1,12 @@
+﻿@inherits UmbracoTemplatePage
+@*<ol class="breadcrumb" id="breadcrumb">
+        <li class="breadcrumb-item active">Home</li>
+    </ol>*@
+
+<ol class="breadcrumb">
+    @foreach (var ancestor in CurrentPage.Ancestors().Where("Visible").OrderBy("Level"))
+    {
+        <li class="breadcrumb-item"><a href="@ancestor.Url">@ancestor.Name</a></li>
+    }
+    <li>@Model.Content.Name</li>
+</ol>

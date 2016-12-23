@@ -1,0 +1,26 @@
+﻿@inherits UmbracoViewPage<UmbracoCms.ViewModels.ContactFormViewModel>
+
+@{
+    Layout = "Master.cshtml";
+}
+
+@Html.Action("ShowContactForm", "ContactForm", Model)
+
+@section Footer
+{
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}
+
+<script>
+    $(function () {
+        //var htmlString = $('#breadcrumb').html();
+        //var activePage = $('#breadcrumb .active').text();
+        //if (activePage !== '') {
+        //    htmlString = '<li class="breadcrumb-item"><a href="/' + activePage + '">' + activePage + '</a></li>';
+        //    htmlString = htmlString + '<li class="breadcrumb-item active">Contact</li>';
+        //}
+        //$('#breadcrumb').html(htmlString);
+        //$('#breadcrumb').css({ "padding-left": "0px" });
+    });
+</script>

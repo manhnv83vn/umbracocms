@@ -1,0 +1,13 @@
+﻿@inherits UmbracoViewPage<UmbracoCms.ViewModels.ContactFormViewModel>
+
+@{
+    Layout = "Master.cshtml";
+}
+
+@Html.Action("ShowContactForm", "ContactForm", Model)
+
+@section Footer
+{
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}
