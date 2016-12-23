@@ -1,5 +1,5 @@
 ﻿Git: https://github.com/manhnv83vn/umbracocms
-U|P: manhnv83vn@gmail.com|P@N$12354-
+U|P: manhnv83vn@gmail.com|P@W$12354-
 
 Google search
 building your first umbraco site from scratch
