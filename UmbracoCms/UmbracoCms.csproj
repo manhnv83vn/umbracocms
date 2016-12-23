@@ -3234,6 +3234,8 @@
     <Content Include="Umbraco\Webservices\TreeDataService.ashx" />
     <Content Include="Umbraco\Webservices\UltimatePickerAutoCompleteHandler.ashx" />
     <Content Include="Umbraco\Xslt\Web.config" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\MacroPartials\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -3319,8 +3321,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Logs\" />
-    <Folder Include="Views\Home\" />
-    <Folder Include="Views\MacroPartials\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
